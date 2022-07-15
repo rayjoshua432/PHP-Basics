@@ -19,7 +19,7 @@
    
 //  Naming Conventions
 //       Variables - Underscore e.g $first_name
-//       Methods - camelCase e.g firstFunction
+//       Functions - camelCase e.g firstFunction
 //       Classes - PascalCase e.g FirstClass
 //       Constants - Uppercase with underscore e.g EXPIRATION_DATE
 
@@ -30,10 +30,96 @@
    echo FRUITS[1] . '<br>';
 
 // Operators
+   echo 1+1 . '<br>';   
+   echo 2-1 . '<br>';   
+   echo 6/2 . '<br>';
+   echo 6%2 . '<br>'; // Modulus
+   echo 6**2 . '<br>';
 
+
+// Methods
+   var_dump($name); // spits out all of the information inside a variable
+   echo '<br>';
+   var_dump(12.31);
+   echo '<br>' . gettype($name) . '<br>'; // returns the variable's data type
 
 // Functions
-   var_dump($name); // spits out all of the information inside a variable
-   var_dump(12.31);
-   echo gettype($name) . '<br>'; // returns the variable's data type
+   function sumOfTwoNums($a, $b) {
+      return 'The sum of two numbers is ' . $a+$b . '.';
+   }
+   function displayMsg($user) {
+      return "Hello there, $user.";
+   }
+
+   echo sumOfTwoNums(5,2);
+   echo '<br>';
+   echo displayMsg('Anya');
+
+// Arrays
+   $arr1 = ['1', '2', '3', '4', '5'];
+   $arr2 = array('a' => 'one', 'two', 'three', 'four', 'five'); // declare an index name
+   echo '<br>' . $arr1[0];
+   echo '<br>' . $arr2[0] . '<br>';
+   print_r($arr1);
+   echo '<br>';
+   var_dump($arr1);
+   echo '<br>';
+
+// Conditions
+   // == - value
+   // ==== - value and type
+   $a = 5;
+
+   if ($a == 0) {
+      echo "It is equal to zero.";
+   }else {
+      echo "It is not equal to zero.";
+   }
+   // Ternary condition
+   echo '<br>';
+   echo $a === 5 ? 'It is equal to zero.' : 'It is not equal to zero.';
+   // Switch
+   // break - jump out of a switch and loops
+   // continue - breaks one iteration of the loop
+   echo '<br>';
+   switch($a) {
+      case 1:
+         echo "It is equal to one";
+         break;
+      case 2:
+         echo "It is equal to two";
+         break;
+      default:
+         echo "No no no.";
+         break;
+   }
+//Loops
+   echo '<br>';
+   $num = 10;
+   // While loop
+   while ($num >= 0) {
+      echo 'Number: ' . $num . '<br>';
+      $num--;
+   }
+   // Do while loop
+   echo '<br>';
+   do {
+      echo 'Num: ' . $num . '<br>';
+      $num--;
+   } while ($num >= 0);
+   // Foor loop
+   echo '<br>';
+   for($i = 0; $i <= 10; $i++) {
+      echo 'N: ' . $i . '<br>';
+   }
+   // For each loop - Arrays
+   echo '<br>';
+   $myname = ['My', 'name', 'is', 'Ray Joshua', 'Last Name' => 'Balingkit'];
+   foreach($myname as $index => $val) {
+      echo $val . ' ';
+   }
+   echo '<br>';
+   foreach($myname as $index => $val) {
+      echo $index . ' ';
+   }
 ?>
