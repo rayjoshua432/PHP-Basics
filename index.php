@@ -135,10 +135,10 @@
 </head>
 
 <body>
-   <form action="/Basics/index.php" method="post">
+   <form action="/PHP-Basics/index.php" method="post">
       <br>
-      <input type="text" name="username" placeholder="Enter your username" required>
-      <input type="text" name="password" placeholder="Enter your password" required>
+      <input type="text" name="username" placeholder="Enter your username">
+      <input type="text" name="password" placeholder="Enter your password">
       <input type="submit" name="add" value="Add">
       <?php
       // Forms
@@ -150,6 +150,37 @@
          } else {
             echo '<br>Nothing to add.';
          }
+      // mySQL Database
+         $servername = 'localhost';
+         $user = 'root';
+         $password = '';
+         $dbname = 'basics';
+
+         // Create connection
+         $conn = mysqli_connect($servername, $user, $password, $dbname);
+
+         // Checks the connection status
+         if (!$conn) {
+            die('<br>Connection failed: ' . mysqli_connect_error()  . '<br>');
+         } else {
+            echo '<br>Connection established<br>';
+         }
+
+         // Database statement query from table
+         $stmt = "SELECT * FROM users";
+         $query = mysqli_query($conn, $stmt);
+         
+         // Display rows of a table
+         // while ($row = mysqli_fetch_array($query)) {
+         //    echo '<br>Data: <br>' . $row[0] , '<br>';
+         //    echo $row[1] , '<br><br>';
+         // }
+         for ($i = 0; $i < mysqli_num_rows($query); $i++) {
+            $row = mysqli_fetch_array($query);
+            echo '<br>Data: <br>' . $row['username'] , '<br>';
+            echo $row['password'] , '<br><br>';
+         }   
+         
       ?>
    </form>
 </body>
