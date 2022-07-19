@@ -30,7 +30,7 @@
    echo FRUITS[1] . '<br>';
 
 // Operators
-   echo 1+1 . '<br>';   
+   echo 1+11222 . '<br>';   
    echo 2-1 . '<br>';   
    echo 6/2 . '<br>';
    echo 6%2 . '<br>'; // Modulus
@@ -123,3 +123,35 @@
       echo $index . ' ';
    }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Forms</title>
+</head>
+
+<body>
+   <form action="/Basics/index.php" method="post">
+      <br>
+      <input type="text" name="username" placeholder="Enter your username" required>
+      <input type="text" name="password" placeholder="Enter your password" required>
+      <input type="submit" name="add" value="Add">
+      <?php
+      // Forms
+         if (isset($_POST['add'])) {
+            $username = $_POST['username'];
+            $pass = $_POST['password'];
+            echo '<br>Username: ' . $username . '<br>';
+            echo 'Password: ' . $pass . '<br>';
+         } else {
+            echo '<br>Nothing to add.';
+         }
+      ?>
+   </form>
+</body>
+
+</html>
