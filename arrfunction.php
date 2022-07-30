@@ -47,5 +47,13 @@ print_r($num_values);
 
 // Compare the values of two arrays and return the difference
 $arr5 = array(0, 0, 0, 0, 1, 2);
-$arr6 = array(0, 0, 0 , 0, 2);
+$arr6 = array(0, 0, 0, 0, 2);
 print_r(array_diff($arr5, $arr6));
+
+// Compare the keys and values of two or more arrays and return the difference
+$arr7 = array('a' => 'mango', 'b' => 'banana', 'c' => 'apple', 'd' => 'grape');
+$arr8 = array('a' => 'mango', 'b' => 'banana', 'c' => 'apple', 'd' => 'blueberry');
+print_r(array_diff_assoc($arr7, $arr8));
+
+// Compare the keys of two or more arrays and return the difference
+print_r(array_diff_key($arr5, $arr6));
